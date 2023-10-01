@@ -1,0 +1,18 @@
+name: CI Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Run ESLint and Jest Tests
+
+    steps:
+      uses: actions/checkout@v2
+      uses: actions/setup-node@v2
+      run: npm install
+      run: npm run lint 
+      run: npm test  
